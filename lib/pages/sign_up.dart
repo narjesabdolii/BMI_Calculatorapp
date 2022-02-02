@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/User.dart';
+import 'package:my_app/pages/home.dart';
 
 class Signup extends StatefulWidget {
   const Signup({Key? key}) : super(key: key);
@@ -10,6 +12,7 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
   bool isChecked_male = false;
   bool isChecked_female = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +27,16 @@ class _SignupState extends State<Signup> {
         padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 30.0),
         child: Column(
           children:  <Widget>[
-            const TextField(
+             const TextField(
               decoration: InputDecoration(
                 labelText: 'Email-Address',
                 icon: Icon(Icons.email_rounded),
+
+
+
               ),
             ),
-            const TextField(
+             const TextField(
               decoration: InputDecoration(
                 labelText: 'Password',
                 icon: Icon(Icons.password_rounded),
@@ -63,6 +69,7 @@ class _SignupState extends State<Signup> {
               onPressed: () {
                 setState(() {
                   Navigator.pushNamed(context, '/login');
+
                 });
               },
               color: Colors.purple[400],
