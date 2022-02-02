@@ -10,7 +10,7 @@ class _BMIState extends State<BMI> {
   final _heightController = TextEditingController();
   final _weightController = TextEditingController();
   double? _bmi;
-  late String _string;
+
 
   void _calculate() {
     final double? height = double.tryParse(_heightController.value.text);
@@ -18,7 +18,6 @@ class _BMIState extends State<BMI> {
 
     if (height == null || height <= 0 || weight == null || weight <= 0) {
       setState(() {
-        _string = 'invalid number';
       });
       return;
     }
