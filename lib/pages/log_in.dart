@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
               RaisedButton(
                 onPressed: () {
                   setState(() {
-                    Navigator.pushNamed(context, '/bmi');
+                    Navigator.pushNamed(context, '/bottomNvg');
                   });
                 },
                 color: Colors.purple[400],

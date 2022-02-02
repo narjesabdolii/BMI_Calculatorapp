@@ -13,12 +13,16 @@ class BottomNavigate extends StatelessWidget {
          backgroundColor: Colors.purple[300],
        ),
       bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.grey[400],
+
         items: const [
           BottomNavigationBarItem(
+             backgroundColor: Colors.white,
               icon: Icon(Icons.home),
               label: 'Home',
           ),
           BottomNavigationBarItem(
+            backgroundColor: Colors.white,
               icon: Icon(Icons.list_alt_outlined),
             label: 'BMI List',
           ),
