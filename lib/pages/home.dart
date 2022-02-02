@@ -40,7 +40,11 @@ class _HomeState extends State<Home> {
                   Navigator.pushNamed(context,'/signup');
                 });
               },
-              child: const Text('Sign Up'),
+              child: const Text('Sign Up',
+              style: TextStyle(
+                fontSize: 30.0,
+                fontFamily: 'Dongle-Bold',
+              ),),
               color: Colors.purple[400],
 
 
@@ -55,7 +59,11 @@ class _HomeState extends State<Home> {
                   Navigator.pushNamed(context, '/login');
                 });
               },
-              child: const Text('Log In'),
+              child: const Text('Log In',
+              style: TextStyle(
+                fontFamily: 'Dongle-Bold',
+                fontSize: 30.0,
+              ),),
               color: Colors.purple[400],
             ),
           ),

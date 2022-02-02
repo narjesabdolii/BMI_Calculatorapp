@@ -19,7 +19,11 @@ class _SignupState extends State<Signup> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: const Text('Sign Up'),
+        title: const Text('Sign Up',
+          style: TextStyle(
+              fontFamily: 'Dongle-Bold',
+              fontSize: 35.0
+          ) ,),
         backgroundColor: Colors.purple[300],
 
       ),
@@ -46,7 +50,11 @@ class _SignupState extends State<Signup> {
             CheckboxListTile(
                 value: isChecked_female,
                 activeColor: Colors.purple[300],
-                title: const Text('female'),
+                title: const Text('female',
+                  style: TextStyle(
+                      fontFamily: 'Dongle-Bold',
+                      fontSize: 30.0
+                  ) ,),
                 onChanged: (bool? value)
                 {
                   setState(() {
@@ -57,7 +65,11 @@ class _SignupState extends State<Signup> {
             CheckboxListTile(
                 value: isChecked_male,
                 activeColor: Colors.purple[300],
-                title: const Text('male'),
+                title: const Text('male',
+                  style: TextStyle(
+                      fontFamily: 'Dongle-Bold',
+                      fontSize: 30.0
+                  ) ,),
                 onChanged: (bool? value)
                 {
                   setState(() {
@@ -76,11 +88,10 @@ class _SignupState extends State<Signup> {
               child: const Text('sign up',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+                fontSize: 30.0,
+                fontFamily: 'Dongle-Bold',
               ),
               ),
-
-
-
             )
 
           ],

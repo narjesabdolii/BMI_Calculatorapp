@@ -33,7 +33,11 @@ class _BMIState extends State<BMI> {
         appBar: AppBar(
           centerTitle: true,
           elevation: 6,
-          title: const Text('BMI Calculator'),
+          title: const Text('BMI Calculator',
+            style: TextStyle(
+                fontFamily: 'Dongle-Bold',
+                fontSize: 35.0
+            ) ,),
           backgroundColor: Colors.purple[300],
 
         ),
@@ -67,6 +71,10 @@ class _BMIState extends State<BMI> {
                         builder: (context){
                           return AlertDialog(
                             content: Text( _bmi == null ? 'No Result' : _bmi!.toStringAsFixed(2),
+                              style: const TextStyle(
+                                  fontFamily: 'Dongle-Bold',
+                                  fontSize: 35.0
+                              ) ,
                             ),
                           );
                         },
@@ -81,6 +89,8 @@ class _BMIState extends State<BMI> {
                     Text('calculate',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        fontFamily: 'Dongle-Bold',
+                        fontSize: 30.0,
                       ),
                     ),
                   ],

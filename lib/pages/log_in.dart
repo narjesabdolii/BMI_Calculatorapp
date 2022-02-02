@@ -13,7 +13,11 @@ class _LoginState extends State<Login> {
         appBar: AppBar(
           centerTitle: true,
           elevation: 0,
-          title: const Text('Log In'),
+          title: const Text('Log In',
+            style: TextStyle(
+                fontFamily: 'Dongle-Bold',
+                fontSize: 35.0
+            ) ,),
           backgroundColor: Colors.purple[300],
 
         ),
@@ -44,6 +48,8 @@ class _LoginState extends State<Login> {
                 child: const Text('log in',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Dongle-Bold',
+                    fontSize: 30.0,
                   ),
                 ),
               )
