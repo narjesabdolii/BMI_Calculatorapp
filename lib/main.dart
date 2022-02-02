@@ -3,7 +3,9 @@ import 'pages/log_in.dart';
 import 'pages/sign_up.dart';
 import 'pages/Bmi_calculator.dart';
 import 'pages/home.dart';
-import 'pages/BMI_Result.dart';
+import 'pages/Bottom_navigatonBar.dart';
+
+
 
 void main() =>
   runApp(MaterialApp(
@@ -13,7 +15,7 @@ void main() =>
       '/signup' : (context) => const Signup(),
       '/login' : (context) => const Login(),
       '/bmi' : (context) => const BMI(),
-      '/result' : (context) => const BMIResult(),
+      '/bottomNvg' : (context) => const BottomNavigate(),
     },
   ));
 

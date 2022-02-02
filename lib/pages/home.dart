@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'User.dart';
 
 class Home extends StatefulWidget {
@@ -15,7 +14,11 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title : const Text('BMI Calculator'),
+        title : const Text('BMI Calculator',
+          style: TextStyle(
+            fontFamily: 'Dongle-Bold',
+            fontSize: 35.0
+          ) ,),
         centerTitle: true,
         backgroundColor: Colors.purple[300],
       ),
