@@ -10,6 +10,7 @@ class _BMIState extends State<BMI> {
   final _heightController = TextEditingController();
   final _weightController = TextEditingController();
   double? _bmi;
+  String? _msg;
 
 
   void _calculate() {
@@ -24,49 +25,67 @@ class _BMIState extends State<BMI> {
 
     setState(() {
       _bmi = weight / (height/100 * height/100);
+      _msg = _bmi.toString();
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          elevation: 6,
-          title: const Text('BMI Calculator',
-            style: TextStyle(
-                fontFamily: 'Dongle-Bold',
-                fontSize: 35.0
-            ) ,),
-          backgroundColor: Colors.purple[300],
-
-        ),
-        body :  Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 30.0),
+        body :  Container(
+          alignment: const Alignment(-.2, 0),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/back-blue.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Column(
             children:  <Widget>[
-               TextField(
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                controller: _weightController,
-                decoration: const InputDecoration(
-                  labelText: 'Weight in kg',
-                  icon: Icon(Icons.blur_linear_outlined),
+              Container(
+                margin: const EdgeInsets.all(20.0),
+                child: const Text(
+                  'BMI Calculator',
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    fontFamily: 'Dongle-Bold',
+                    color: Colors.white,
+                  ),
                 ),
               ),
-               TextField(
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                controller: _heightController,
-                decoration: const InputDecoration(
-                  labelText: 'height in cm',
-                  icon: Icon(Icons.blur_linear_outlined),
-                ),
-              ),
+               Container(
+                 margin: const EdgeInsets.all(20.0),
+                 child:  TextField(
+                   keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                   controller: _weightController,
+                   decoration: const InputDecoration(
+                     labelText: 'Weight in kg',
+                     icon: Icon(Icons.blur_linear_outlined),
+                   ),
+                 ),
+               ),
+               Container(
+                 margin: const EdgeInsets.all(20.0),
+                 child:TextField(
+                   keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                   controller: _heightController,
+                   decoration: const InputDecoration(
+                     labelText: 'height in cm',
+                     icon: Icon(Icons.blur_linear_outlined),
+                   ),
+                 ),
+               ),
               const SizedBox(height: 20.0),
-              FlatButton(
-               onPressed: ()
-                  {
-                    _calculate();
-                    showDialog(
+              Container(
+                margin: const EdgeInsets.all(20.0),
+                child:  ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.orange[200],
+                  ),
+                    onPressed: ()
+                    {
+                      _calculate();
+                      showDialog(
                         context: context,
                         builder: (context){
                           return AlertDialog(
@@ -78,31 +97,39 @@ class _BMIState extends State<BMI> {
                             ),
                           );
                         },
-                    );
-                  },
-
-                color: Colors.purple[400],
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Icon(Icons.trending_up_outlined),
-                    Text('calculate',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Dongle-Bold',
-                        fontSize: 30.0,
-                      ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const <Widget>[
+                        Icon(Icons.trending_up_outlined,
+                        color: Colors.black87,),
+                        Text('calculate',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Dongle-Bold',
+                            fontSize: 30.0,
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                )
-
-              )
-
+                ),
+              ),
             ],
-
           ),
-
-        )
+        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            Navigator.pushNamed(context, '/home');
+          });
+        },
+        backgroundColor: Colors.orange[200],
+        child: const Icon(Icons.arrow_back_outlined,
+        color: Colors.orange,),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     );
   }
 }
