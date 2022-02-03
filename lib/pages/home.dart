@@ -83,7 +83,21 @@ class _HomeState extends State<Home> {
     ),
     ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {  },
+        onPressed: () {
+      showDialog(
+        context: context,
+        builder: (context){
+          return const AlertDialog(
+            content: Text( 'Call : +989108333273',
+              style: TextStyle(
+                  fontFamily: 'Dongle-Bold',
+                  fontSize: 35.0
+              ) ,
+            ),
+          );
+        },
+      );
+    },
         backgroundColor: Colors.teal[300],
         child: const Icon(Icons.call),
 
