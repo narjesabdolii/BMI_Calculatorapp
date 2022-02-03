@@ -16,89 +16,119 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0,
-        title: const Text('Sign Up',
-          style: TextStyle(
-              fontFamily: 'Dongle-Bold',
-              fontSize: 35.0
-          ) ,),
-        backgroundColor: Colors.purple[300],
+      body : Container(
+          alignment: const Alignment(-.2, 0),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/back-2.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Column(
+            children:  <Widget>[
+              Container(
+                margin: const EdgeInsets.all(20.0),
+                child: const Text(
+                  'Sign Up Form',
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    fontFamily: 'Dongle-Bold',
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                child : const TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Email-Address',
+                    icon: Icon(Icons.email_rounded) ,
+                      iconColor: Colors.teal
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                child :const TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    icon: Icon(Icons.password_rounded),
+                    iconColor: Colors.teal
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                child: CheckboxListTile(
+                    value: isChecked_female,
+                    activeColor: Colors.teal[300],
+                    title: const Text('female',
+                      style: TextStyle(
+                          fontFamily: 'Dongle-Bold',
+                          fontSize: 30.0,
+                          color: Colors.white,
+                      ) ,),
+                    onChanged: (bool? value)
+                    {
+                      setState(() {
+                        isChecked_female = value! ;
+                      });
+                    }
+                ),
 
+              ),
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                child : CheckboxListTile(
+                    value: isChecked_male,
+                    activeColor: Colors.teal[300],
+                    title: const Text('male',
+                      style: TextStyle(
+                          fontFamily: 'Dongle-Bold',
+                          fontSize: 30.0,
+                        color: Colors.white,
+                      ) ,),
+                    onChanged: (bool? value)
+                    {
+                      setState(() {
+                        isChecked_male = value! ;
+                      });
+                    }
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                child:  ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.pushNamed(context, '/login');
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.teal[300],
+                  ),
+                  child: const Text('sign up',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30.0,
+                      fontFamily: 'Dongle-Bold',
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
       ),
-      body :  Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 30.0),
-        child: Column(
-          children:  <Widget>[
-             const TextField(
-              decoration: InputDecoration(
-                labelText: 'Email-Address',
-                icon: Icon(Icons.email_rounded),
-
-
-
-              ),
-            ),
-             const TextField(
-              decoration: InputDecoration(
-                labelText: 'Password',
-                icon: Icon(Icons.password_rounded),
-              ),
-            ),
-            const SizedBox(height: 20.0),
-            CheckboxListTile(
-                value: isChecked_female,
-                activeColor: Colors.purple[300],
-                title: const Text('female',
-                  style: TextStyle(
-                      fontFamily: 'Dongle-Bold',
-                      fontSize: 30.0
-                  ) ,),
-                onChanged: (bool? value)
-                {
-                  setState(() {
-                    isChecked_female = value! ;
-                  });
-                }
-            ),
-            CheckboxListTile(
-                value: isChecked_male,
-                activeColor: Colors.purple[300],
-                title: const Text('male',
-                  style: TextStyle(
-                      fontFamily: 'Dongle-Bold',
-                      fontSize: 30.0
-                  ) ,),
-                onChanged: (bool? value)
-                {
-                  setState(() {
-                    isChecked_male = value! ;
-                  });
-                }
-            ),
-            RaisedButton(
-              onPressed: () {
-                setState(() {
-                  Navigator.pushNamed(context, '/login');
-
-                });
-              },
-              color: Colors.purple[400],
-              child: const Text('sign up',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0,
-                fontFamily: 'Dongle-Bold',
-              ),
-              ),
-            )
-
-          ],
-
-        ),
-
-      )
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            Navigator.pushNamed(context, '/home');
+          });
+        },
+        backgroundColor: Colors.teal[300],
+        child: const Icon(Icons.arrow_back_outlined),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     );
   }
 }

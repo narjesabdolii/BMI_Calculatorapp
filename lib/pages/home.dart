@@ -42,8 +42,8 @@ class _HomeState extends State<Home> {
             ),
             ),
           Container(
-            margin: const EdgeInsets.fromLTRB(60.0, 40.0, 20.0, 10.0),
-            child: FlatButton(
+            margin: const EdgeInsets.fromLTRB(60.0, 30.0, 20.0, 10.0),
+            child: TextButton(
               onPressed: () {
                 setState(() {
                   Navigator.pushNamed(context,'/signup');
@@ -51,19 +51,19 @@ class _HomeState extends State<Home> {
               },
               child: const Text('Sign Up',
               style: TextStyle(
-                fontSize: 30.0,
+                fontSize: 40.0,
                 fontFamily: 'Dongle-Bold',
                 color: Colors.white,
               ),),
-              color: Colors.teal[300],
+
 
 
             ),
           ),
           Container(
-            margin: const EdgeInsets.fromLTRB(60.0, 40.0, 20.0, 10.0),
+            margin: const EdgeInsets.fromLTRB(60.0, 30.0, 20.0, 10.0),
 
-            child: FlatButton(
+            child: TextButton(
               onPressed: () {
                 setState(() {
                   Navigator.pushNamed(context, '/login');
@@ -72,10 +72,10 @@ class _HomeState extends State<Home> {
               child: const Text('Log In',
               style: TextStyle(
                 fontFamily: 'Dongle-Bold',
-                fontSize: 30.0,
+                fontSize: 40.0,
                 color: Colors.white,
               ),),
-              color: Colors.teal[300],
+
             ),
           ),
         ],
@@ -86,7 +86,6 @@ class _HomeState extends State<Home> {
         onPressed: () {  },
         backgroundColor: Colors.teal[300],
         child: const Icon(Icons.call),
-
 
       ),
     );
