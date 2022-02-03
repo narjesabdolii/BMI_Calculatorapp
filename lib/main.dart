@@ -3,7 +3,7 @@ import 'pages/log_in.dart';
 import 'pages/sign_up.dart';
 import 'pages/Bmi_calculator.dart';
 import 'pages/home.dart';
-import 'pages/Bottom_navigatonBar.dart';
+
 
 
 
@@ -15,7 +15,6 @@ void main() =>
       '/signup' : (context) => const Signup(),
       '/login' : (context) => const Login(),
       '/bmi' : (context) => const BMI(),
-      '/bottomNvg' : (context) => const BottomNavigate(),
     },
   ));
 
