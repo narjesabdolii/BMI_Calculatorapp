@@ -30,20 +30,17 @@ class _HomeState extends State<Home> {
             child: const Text(
               'BMI APP',
               style: TextStyle(
-                fontSize: 40.0,
+                fontSize: 50.0,
                 fontFamily: 'Dongle-Bold',
                 color: Colors.white,
               ),
             ),
           ),
           Container(
-            margin: const EdgeInsets.fromLTRB(60.0, 40.0, 20.0, 10.0),
-            child: const CircleAvatar(
-              radius: 85.0,
-              backgroundColor: Colors.white,
-              backgroundImage:AssetImage('assets/BMI-Calculator.png'),
+            margin: const EdgeInsets.fromLTRB(60.0, 60.0, 20.0, 10.0),
+            child: Image.asset('assets/bmi-2.png',width: 130.0,height: 130.0,
             ),
-          ),
+            ),
           Container(
             margin: const EdgeInsets.fromLTRB(60.0, 40.0, 20.0, 10.0),
             child: FlatButton(
@@ -56,8 +53,9 @@ class _HomeState extends State<Home> {
               style: TextStyle(
                 fontSize: 30.0,
                 fontFamily: 'Dongle-Bold',
+                color: Colors.white,
               ),),
-              color: Colors.purple[400],
+              color: Colors.teal[300],
 
 
             ),
@@ -75,8 +73,9 @@ class _HomeState extends State<Home> {
               style: TextStyle(
                 fontFamily: 'Dongle-Bold',
                 fontSize: 30.0,
+                color: Colors.white,
               ),),
-              color: Colors.purple[400],
+              color: Colors.teal[300],
             ),
           ),
         ],

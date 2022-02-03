@@ -61,6 +61,8 @@ flutter:
   assets:
     - assets/BMI-Calculator.png
     - assets/back-2.png
+    - assets/bmi.png
+    - assets/bmi-2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
