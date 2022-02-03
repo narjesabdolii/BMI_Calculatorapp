@@ -13,6 +13,30 @@ class _SignupState extends State<Signup> {
   bool isChecked_male = false;
   bool isChecked_female = false;
 
+   late String username;
+   late String password;
+   late String _msg;
+   int flag = 0;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+   late List <User> users;
+
+   void _addToList(String username,String password)
+   {
+       for(int i=0;i<users.length;i++)
+         {
+           if(users[i].username == username) {
+             _msg = 'this username is already taken';
+             flag = 0;
+           }
+           else
+             {
+               User user = User(username,password);
+               users.add(user);
+               flag = 1;
+             }
+         }
+   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +63,9 @@ class _SignupState extends State<Signup> {
               ),
               Container(
                 margin: const EdgeInsets.all(10.0),
-                child : const TextField(
-                  decoration: InputDecoration(
+                child :  TextField(
+                  controller: emailController,
+                  decoration: const InputDecoration(
                     labelText: 'Email-Address',
                     icon: Icon(Icons.email_rounded) ,
                       iconColor: Colors.teal
@@ -101,7 +126,16 @@ class _SignupState extends State<Signup> {
                 child:  ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      Navigator.pushNamed(context, '/login');
+                      _addToList(emailController.text, passwordController.text);
+                      if(flag == 1)
+                        {
+                          Navigator.pushNamed(context, '/login');
+                        }
+                      else
+                        {
+                          Text(_msg.toString());
+                        }
+
                     });
                   },
                   style: ElevatedButton.styleFrom(
