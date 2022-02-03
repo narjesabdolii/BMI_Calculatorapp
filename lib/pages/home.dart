@@ -82,6 +82,13 @@ class _HomeState extends State<Home> {
       ),
     ),
     ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {  },
+        backgroundColor: Colors.teal[300],
+        child: const Icon(Icons.call),
+
+
+      ),
     );
   }
 }
